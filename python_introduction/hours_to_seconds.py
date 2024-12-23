@@ -2,4 +2,5 @@
 
 hours = 2
 seconds = int(hours * 3600)
+seconds = int(3600 * hours)
 print("2 hour(s) is ", seconds, "seconds.",)
