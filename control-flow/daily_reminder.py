@@ -1,27 +1,26 @@
-#This script will ask the user for a single task, its priority level, and if it is time-sensitive. The program will then provide a customized reminder for that task, demonstrating control flow and loops without relying on data structures to store multiple tasks.
+# daily_reminder.py
 
+# Prompt user for task details
 task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
-time = input("Is it time-bound? (yes/no): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
+# Initialize the reminder message based on priority using a match statement
 match priority:
     case "high":
-        
-        if time == "yes":
-            print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
-        
-        else:
-            print(f"Reminder: '{task}' is a high priority task, but does not require immediate attention today!")
-    
+        reminder = f"'{task}' is a high priority task"
     case "medium":
-        if time == "yes":
-            print(f"Reminder: '{task}' is a medium priority task that requires immediate attention today!")
-        else:
-             print(f"Reminder: '{task}' is a medium priority task, but does not require immediate attention today!")
+        reminder = f"'{task}' is a medium priority task"
     case "low":
-        if time == "yes":
-            print(f"Reminder: '{task}' is a low priority task, that requires immediate attention today!")
-        else:
-            print(f"Note:'{task}'is a low priority task. Consider completing it when you have free time.")
+        reminder = f"'{task}' is a low priority task"
     case _:
-        print(f"'{task}' has unspecified priority")
+        reminder = f"'{task}' is a task with unspecified priority"
+
+# Modify the reminder if the task is time-bound
+if time_bound == "yes":
+    reminder += " that requires immediate attention today!"
+else:
+    reminder += ". Consider completing it when you have free time."
+
+# Print the customized reminder with the required format
+print(f"Reminder: {reminder}")
