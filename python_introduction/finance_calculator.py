@@ -1,14 +1,14 @@
-#a script named finance_calculator.py. This script will calculate the user’s monthly savings based on inputted monthly income and expenses. It will then project these savings over a year, assuming a fixed interest rate, to demonstrate compound interest’s effect on savings.
+# Prompt the user for their financial details
+monthly_income = float(input("Enter your monthly income: "))
+monthly_expenses = float(input("Enter your total monthly expenses: "))
 
-monthly_income =  int(input("Enter your monthly income: "))
-Expenses = int(input("Enter your total monthly expenses: "))
-monthly_savings = monthly_income - Expenses
+#monthly savings
+monthly_savings = monthly_income - monthly_expenses
 
-print(f"Your monthly savings are ${monthly_savings}")
-#Interest_rate = 0.05 5%
-#time = 1 year = 12 months
-
+#annual savings with a 5% interest rate
 annual_savings = monthly_savings * 12
-Projected_savings = int(annual_savings + (annual_savings * 0.05))
-print(f"Projected savings after one year, with interest, is: ${Projected_savings}")
+projected_savings = annual_savings + (annual_savings * 0.05)
 
+# Display the results
+print(f"Your monthly savings are ${monthly_savings:.2f}.")
+print(f"Projected savings after one year, with interest, is: ${projected_savings:.2f}.")
