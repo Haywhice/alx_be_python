@@ -15,12 +15,13 @@ def main():
 
         if choice == '1':
             # Prompt for and add an item
-            item = input("Enter an item: ")
+            item = input("Enter the item to add: ")
             shopping_list.append(item)
+            print(f"'{item}' has been added to the shopping list")
             pass
         elif choice == '2':
             # Prompt for and remove an item
-            item = input("Enter an item: ")
+            item = input("Enter the item to remove: ")
             if item in shopping_list:
                 shopping_list.remove(item)
                 print(f"'{item}' has been removed from the shopping list")
@@ -29,8 +30,11 @@ def main():
             pass
         elif choice == '3':
             # Display the shopping list
-            for i in shopping_list:
-                print(i)
+            if shopping_list:
+                for i in shopping_list:
+                    print(i)
+            else:
+                print("The shopping list is currently empty") 
             pass
         elif choice == '4':
             print("Goodbye!")
